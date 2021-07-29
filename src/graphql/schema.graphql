@@ -1,0 +1,32 @@
+type Query {
+        agent (id:ID!): User!
+        agents (name:String, age:Int): [User!]
+        posts: [Posts!]!
+        post (id:ID!): Posts!
+        pictures: [Picture!]!
+        picture (id:ID!): Picture!
+    }
+    type User {
+        id: ID!
+        name: String!
+        age: Int!
+        married: Boolean! 
+        average: Float!
+        status: String!
+        posts: [Posts!]!
+        pictures: [Picture]!
+    }
+    type Posts {
+        id: ID!
+        title: String!
+        content: String!
+        author:  User! 
+        picture: Picture!
+        
+    }
+    type Picture {
+        id: ID!
+        path: String!
+        post: Posts!
+        author:  User! 
+    }
