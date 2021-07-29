@@ -20,6 +20,7 @@ const server = new GraphQLServer({
         average: Float!
         status: String!
         posts: [Posts!]!
+        pictures: [Picture]!
     }
     type Posts {
         id: ID!
@@ -27,6 +28,7 @@ const server = new GraphQLServer({
         content: String!
         author:  User! 
         picture: Picture!
+        
     }
     type Picture {
         id: ID!
@@ -78,7 +80,11 @@ const server = new GraphQLServer({
             posts: async (parent, args, context, info) => {
                 const response = await (await axios.get(`${basedURL}/posts?author=${parent.id}`)).data;
                 return response
-            }
+            },
+            pictures: async (parent, args, context, info) => {
+                const response = await (await axios.get(`${basedURL}/pictures?author=${parent.id}`)).data;
+                return response
+            },
         },
         Picture: {
             post: async (parent, args, context, info) => {
