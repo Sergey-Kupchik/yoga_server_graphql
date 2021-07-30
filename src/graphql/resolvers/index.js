@@ -32,7 +32,35 @@ const Query = {
     },
 };
 
-const Posts = {
+const Mutation = {
+    createAgent: async (parent, args, context, info) => {
+
+        // get avarage from somthing else 
+
+        const response = await (await axios.post(`${basedURL}/users`, {
+            name: args.name,
+            age: args.age,
+            married: args.married,
+            status: "good man",
+            average: 3.9
+        })).data;
+        return response;
+    },
+    createPost: async (parent, args, context, info) => {
+        // get token = user id 
+
+
+        const response = await (await axios.post(`${basedURL}/posts`, {
+            title: args.title,
+            content: args.content,
+            author: args.author,
+            picture: 23
+        })).data;
+        return response;
+    },
+}
+
+const Post = {
     author: async (parent, args, context, info) => {
         const response = await (await axios.get(`${basedURL}/users/${parent.author}`)).data;
         return response;
@@ -69,7 +97,8 @@ const Picture = {
 
 export {
     Query,
-    Posts,
+    Mutation,
+    Post,
     User,
     Picture,
 }

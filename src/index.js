@@ -1,5 +1,5 @@
 import { GraphQLServer } from "graphql-yoga"
-import { Query, Posts, User, Picture } from "./graphql/resolvers/index"
+import { Query, Post, User, Picture, Mutation } from "./graphql/resolvers/index"
 import axios from "axios"
 
 const basedURL = "http://localhost:3004";
@@ -8,7 +8,8 @@ const server = new GraphQLServer({
     typeDefs: "./src/graphql/schema.graphql",
     resolvers: {
         Query,
-        Posts,
+        Mutation,
+        Post,
         User,
         Picture,
     }

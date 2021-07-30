@@ -1,32 +1,37 @@
 type Query {
         agent (id:ID!): User!
         agents (name:String, age:Int): [User!]
-        posts: [Posts!]!
-        post (id:ID!): Posts!
+        posts: [Post!]!
+        post (id:ID!): Post!
         pictures: [Picture!]!
         picture (id:ID!): Picture!
     }
-    type User {
+
+type Mutation {
+    createAgent (name: String!, age: Int!, married: Boolean! ): User!
+    createPost (title: String!, content: String!, author: ID!): Post!
+    }
+
+type User {
         id: ID!
         name: String!
         age: Int!
         married: Boolean! 
         average: Float!
         status: String!
-        posts: [Posts!]!
+        posts: [Post!]!
         pictures: [Picture]!
     }
-    type Posts {
+type Post {
         id: ID!
         title: String!
         content: String!
         author:  User! 
         picture: Picture!
-        
     }
-    type Picture {
+type Picture {
         id: ID!
         path: String!
-        post: Posts!
+        post: Post!
         author:  User! 
     }
