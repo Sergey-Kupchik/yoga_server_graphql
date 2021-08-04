@@ -28,6 +28,7 @@ enum StatusType {
      trainee
      guest
      good
+     anactive
 }
 
 type User {

@@ -36,7 +36,7 @@
       "name": "Sergey",
       "age": 23,
       "married": true,
-      "status": "good man",
+      "status": "trainee",
       "average": 3.9,
       "id": 5
     },
@@ -95,6 +95,22 @@
       "status": "active",
       "average": 3.9,
       "id": 12
+    },
+    {
+      "name": "Vanita",
+      "age": 23,
+      "married": true,
+      "status": "active",
+      "average": 3.9,
+      "id": 13
+    },
+    {
+      "name": "Vanita",
+      "age": 23,
+      "married": true,
+      "status": "active",
+      "average": 3.9,
+      "id": 14
     }
   ],
   "posts": [
