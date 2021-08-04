@@ -78,7 +78,7 @@ const Mutation = {
         return response;
     },
     createPost: async (parent, args, context, info) => {
-        const { title, content, author } = args.data
+        const { title, content, author } = args
         // get token = user id 
 
         const response = await (await axios.post(`${basedURL}/posts`, {
